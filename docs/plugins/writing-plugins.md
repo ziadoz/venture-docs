@@ -214,13 +214,14 @@ final class JobAdding
 }
 ```
 
-| Property      | Type                 | Description                                                                                                                                                                  |
-| ------------- | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Parameter | Type | Description |
+| --- | --- | --- |
 | `$definition` | `WorkflowDefinition` | The `WorkflowDefinition` object to which the job is getting added. You can get the actual workflow class the definition belongs to via the `$definition->workflow()` method. |
-| `$job`        | `WorkflowableJob`    | The job instance that is being added to the definition.                                                                                                                      |
-| `$name`       | `string              | null`                                                                                                                                                                        | The name of the job that was passed to the `addJob` method. You can change the name of the job by setting this property on the event. If `$name` is still `null` after all event listeners have been called, the FQCN of the job class will get used instead. |
-| `$delay`      | `DateTimeInterface   | DateInterval                                                                                                                                                                 | array                                                                                                                                                                                                                                                         | null` | The delay for the job that was passed to the `addJob` method. You can change the delay of the job by setting this property on the event. |
-| `$jobID`      | `string              | null`                                                                                                                                                                        | The ID of the job that was passed to the `addJob` method. You can change the ID of the job by setting this property on the event.                                                                                                                             |
+| `$job` | `WorkflowableJob` | The job instance that is being added to the definition. |
+| `$name` | `?string` | The name of the job that was passed to the `addJob` method. You can change the name of the job by setting this property on the event. If `$name` is still `null` after all event listeners have been called, the FQCN of the job class will get used instead. |
+| `$delay` | `DateTimeInterface\|DateInterval\|array\|null` | The delay for the job that was passed to the `addJob` method. You can change the delay of the job by setting this property on the event. |
+| `$jobID` | `string\|null` | The ID of the job that was passed to the `addJob` method. You can change the ID of the job by setting this property on the event. |
+
 
 ### `JobAdded` {#job-added}
 
